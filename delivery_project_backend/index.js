@@ -1,11 +1,13 @@
 const dotenv = require('dotenv').config();
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const port = 3000;
 const apiRoutes = require('./routes/api');
 const adminRoutes = require('./routes/admin')
 const connection = require('./database')
 
+app.use(cors())
 app.use(express.json());
 app.use(express.static('public'));
 app.use('/', apiRoutes)
