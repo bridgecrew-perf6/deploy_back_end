@@ -10,7 +10,7 @@ const FoodValidator = require('../middleware/create_update')
 
 router.get('/food/:id', FoodController.get_food);
 router.get('/foods', FoodController.get_foods);
-router.post('/new/food', FoodValidator.createfood(), FoodController.create_food);
+router.post('/new/food', FoodController.create_food);
 router.post('/update/food/:id', FoodController.update_food);
 router.post('/delete/food/:id', FoodController.delete_food)
 router.post('/search', FoodController.search_food)
