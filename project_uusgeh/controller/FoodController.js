@@ -33,14 +33,14 @@ const get_foods = (req, res, next) => {
 }
 
 const create_food = (req, res, next) => {
-    const data = req.body;
-    const errors = validationResult(req)
-    if(errors.isEmpty){
-        return res.status(400).json({
-            success: false,
-            errors: errors.errors
-        })
-    } else {
+//    const data = req.body;
+//    const errors = validationResult(req)
+//    if(errors.isEmpty){
+//        return res.status(400).json({
+//            success: false,
+//            errors: errors.errors
+//        })
+//    } else {
     Food.create(data, function (err, data) {
         if(err) res.json({
             success: false,
@@ -51,7 +51,8 @@ const create_food = (req, res, next) => {
             success: true,
             data: data,
         });
-    })}
+    })
+// }
 };
 
 const update_food = (req, res, next) => {
@@ -96,13 +97,7 @@ module.exports = {
     get_food,
     get_foods,
     create_food,
-<<<<<<< HEAD
-    update,
-    delete_food
-}
-=======
     delete_food,
     update_food,
     search_food,
 }
->>>>>>> e8187bd30f37059cae735bb9d859a934c5c5812e
