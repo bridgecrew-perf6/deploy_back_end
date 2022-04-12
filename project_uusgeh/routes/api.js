@@ -22,7 +22,4 @@ router.post('/orders', OrderController.get_orders)
 router.post('/update/order', OrderController.update_order)
 router.post('/delete/order', OrderController.delete_order)
 
-router.post('/createfood', FoodController.create_food);
-
-
 module.exports = router;
