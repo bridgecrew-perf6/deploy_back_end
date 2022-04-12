@@ -98,7 +98,7 @@ const delete_order = (req, res, next) => {
 module.exports = {
   create_order,
   get_user_order_by_userId,
-  get_order_by_id,
+//  get_order_by_id,
   get_orders,
   update_order,
   delete_order,
