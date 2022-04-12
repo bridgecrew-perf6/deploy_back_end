@@ -10,7 +10,7 @@ const register = async (req, res, next) => {
         if (oldUser) {
           return res.status(400).json({
             success: false,
-            status: `Өөрөө аль хэдийн бүртгэгдсэн байнаштээ. Нэвтрээд орчилдоо.`,
+            status: `Account already exists. Please log in`,
           });
         }
         var hashedPassword = await bcrypt.hash(data.password, 10);
@@ -47,7 +47,7 @@ const login = async(req, res)=>{
         if(!(email && password)){
             res
             .status(400)
-            .json({success:false, status: `Юмаа бүрэн оруулчихаач.`,updated:1,email: email, password: password})
+            .json({success:false, status: `Fill all fields`,updated:1,email: email, password: password})
             return
         }else{
             const user = await User.findOne({email})
@@ -60,13 +60,13 @@ const login = async(req, res)=>{
                     }
                 )
                 res.status(200)
-                .json({success: true, status: `Орчихлоошт.`, data: user, token:token})
+                .json({success: true, status: `Signed in.`, data: user, token:token})
                 return
             }
             else{
                 res.status(400).json({
                     success: false,
-                    status: `Нууц үг эдр чинь буруу бээштээ.`
+                    status: `Password incorrect!`
                 })
                 return
             }
