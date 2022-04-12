@@ -33,7 +33,7 @@ const get_foods = (req, res, next) => {
 }
 
 const create_food = (req, res, next) => {
-//    const data = req.body;
+    const data = req.body;
 //    const errors = validationResult(req)
 //    if(errors.isEmpty){
 //        return res.status(400).json({
