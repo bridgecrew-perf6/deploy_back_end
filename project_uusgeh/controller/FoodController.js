@@ -78,8 +78,8 @@ const delete_food = (req, res, next) => {
 };
 
 const search_food = (req, res, next) => {
-    const foodName = req.body
-    Food.findOne({foodName: foodName}, function( err, data ){
+    const foodName = req.body.name
+    Food.findOne({name: foodName}, function( err, data ){
         if (err) 
         res.json({
             success: false,
